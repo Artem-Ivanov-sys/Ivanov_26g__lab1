@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Вивести НСК для довільної серії двоцифрових чисел від 20 до 40.");
+        let a, b;
+        a = parseInt(prompt("Введіть перше число:"));
+        b = parseInt(prompt("Введіть друге число:"));
+        if (isNaN(a)||isNaN(b)) {
+            alert("Введені дані некоректні");
+        } else if (a > 40 || a < 20 || b > 40 || b < 20) {
+            alert("Введені дані поза допустимого діапазону");
+        } else {
+            console.log(`
+Введені дані:
+a = ${a}, b = ${b}
+`);
+            [a_, b_] = [a, b];
+            while (a_*b_) {
+                if (a_ > b_) {
+                    a_ = a_ % b_;
+                } else {
+                    b_ = b_ % a_;
+                }
+            }
+            console.log(`НСК: ${a*b/(a_+b_)}`);
+        }
+    </script>
+</body>
+</html>

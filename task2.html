@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Ввести послідовність натуральних чисел та обчислити кількість двозначних чисел.");
+        let n;
+        n = parseInt(prompt("Введіть кількість елементів:"));
+        if (isNaN(n)) {
+            alert("Некоректно введена кількість елементів");
+        } else {
+            let s = [];
+            let elem;
+            while (s.length != n) {
+                elem = parseInt(prompt(`Введіть ${s.length+1}-ий елемент:`));
+                if (isNaN(elem)) {
+                    alert("Некоректно введене число, спробуйте ще");
+                    continue;
+                }
+                s.push(elem);
+            }
+            console.log(`
+Введені дані:
+${s}
+            `);
+            let count = 0;
+            for (let i of s) {
+                if (i > 9 && i < 100) {
+                    count ++;
+                }
+            }
+            console.log(`кількість двозначних чисел: ${count}`);
+        }
+    </script>
+</body>
+</html>

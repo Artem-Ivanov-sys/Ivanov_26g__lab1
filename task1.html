@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Ввести координати точки А(x та y) і визначити: в якій чверті лежить ця точка. Відповідь вивести у вигляді повідомлення.");
+        let x, y;
+        x = parseFloat(prompt("Введіть координату х:"));
+        y = parseFloat(prompt("Введіть координату y:"));
+        console.log(`
+Введені дані:
+x = ${x}
+y = ${y}        
+`)
+        if (isNaN(x)||isNaN(y)) {
+            alert("Некоректно введені дані");
+        } else {
+            if (x>0 && y>0) {
+                console.log("Перша чверть");
+            } else
+            if (x<0 && y>0) {
+                console.log("Друга чверть");
+            } else
+            if (x<0 && y<0) {
+                console.log("Третя чверть");
+            } else
+            if (x>0 && y<0) {
+                console.log("Четверта чверть");
+            } else {
+                console.log("Визначити неможливо");
+            }
+        }
+    </script>
+</body>
+</html>
